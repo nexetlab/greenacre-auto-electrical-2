@@ -1,0 +1,430 @@
+/* Modern Navigation Bar Styles - White & Blue Theme */
+:root {
+  --primary-blue: #1976d2; /* Main blue */
+  --primary-blue-light: #63a4ff; /* Lighter blue */
+  --primary-blue-dark: #004ba0; /* Darker blue */
+  --white: #ffffff; /* Pure white */
+  --white-90: rgba(255, 255, 255, 0.9);
+  --white-80: rgba(255, 255, 255, 0.8);
+  --ash-light: #f5f5f5; /* Very light ash */
+  --ash-medium: #e0e0e0; /* Medium ash */
+  --ash-dark: #bdbdbd; /* Dark ash */
+  --glass-effect: rgba(255, 255, 255, 0.2);
+  --transition: all 0.3s ease;
+}
+
+/* Reset and base styles */
+* {
+  box-sizing: border-box;
+}
+
+/* Main Navigation Container */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: var(--white);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--ash-medium);
+  transition: var(--transition);
+  padding: 1rem 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.navbar.scrolled {
+  background: var(--white);
+  padding: 0.75rem 0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* Logo Section */
+.logoSection {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.logoIcon {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+  background-color: var(--primary-blue);
+  border-radius: 8px;
+}
+
+.logoSection:hover .logoIcon {
+  transform: scale(1.05);
+  background-color: var(--primary-blue-dark);
+}
+
+.logoImage {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  filter: brightness(0) invert(1); /* Makes logo white */
+}
+
+.logoText {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.brandName {
+  font-family: 'Orbitron', 'Arial Black', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--primary-blue-dark);
+  margin: 0;
+  letter-spacing: 2px;
+  line-height: 1;
+}
+
+.tagline {
+  font-family: 'Rajdhani', 'Arial', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--ash-dark);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  line-height: 1;
+  margin-top: 2px;
+}
+
+/* Desktop Navigation */
+.desktopNav {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.navItem {
+  position: relative;
+}
+
+.navLink {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--primary-blue-dark);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  transition: var(--transition);
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: relative;
+}
+
+.navLink:hover {
+  color: var(--primary-blue);
+  background: var(--ash-light);
+  transform: translateY(-1px);
+}
+
+.navLink::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary-blue);
+  transition: width 0.3s ease;
+}
+
+.navLink:hover::after {
+  width: 100%;
+}
+
+/* CTA Section */
+.ctaSection {
+  display: flex;
+  align-items: center;
+}
+
+.ctaButton {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--white);
+  background: var(--primary-blue);
+  border: 2px solid var(--primary-blue);
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.ctaButton:hover {
+  background: var(--primary-blue-dark);
+  border-color: var(--primary-blue-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(25, 118, 210, 0.3);
+}
+
+/* Mobile Toggle Button */
+.mobileToggle {
+  display: none;
+  background: var(--ash-light);
+  border: 1px solid var(--ash-medium);
+  color: var(--primary-blue);
+  padding: 0.6rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: var(--transition);
+  width: 48px;
+  height: 48px;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobileToggle:hover {
+  background: var(--ash-medium);
+  border-color: var(--ash-dark);
+}
+
+.mobileToggle svg {
+  width: 24px;
+  height: 24px;
+  color: var(--primary-blue);
+}
+
+/* Mobile Menu */
+.mobileMenu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 80%;
+  max-width: 350px;
+  height: 100vh;
+  background: var(--white);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: 2rem;
+  border-left: 1px solid var(--ash-medium);
+  z-index: 999;
+  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.05);
+}
+
+/* Close button inside mobile menu */
+.mobileCloseButton {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  background: var(--ash-light);
+  border: 1px solid var(--ash-medium);
+  color: var(--primary-blue);
+  padding: 0.6rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: var(--transition);
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobileCloseButton:hover {
+  background: var(--ash-medium);
+  border-color: var(--ash-dark);
+  transform: scale(1.05);
+}
+
+.mobileCloseButton svg {
+  width: 20px;
+  height: 20px;
+  color: var(--primary-blue);
+}
+
+.mobileNavList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 4rem;
+}
+
+.mobileNavItem,
+.mobileCtaItem {
+  width: 100%;
+}
+
+.mobileNavLink,
+.mobileCtaLink {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--primary-blue-dark);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 1rem;
+  border-radius: 10px;
+  transition: var(--transition);
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  border-left: 3px solid transparent;
+}
+
+.mobileNavLink:hover,
+.mobileCtaLink:hover {
+  color: var(--primary-blue);
+  background: var(--ash-light);
+  border-left-color: var(--primary-blue);
+}
+
+.mobileIcon {
+  font-size: 1.2rem;
+  color: var(--primary-blue);
+  min-width: 20px;
+}
+
+.mobileCtaLink {
+  background: var(--primary-blue);
+  color: var(--white);
+  margin-top: 2rem;
+  justify-content: center;
+  border: 2px solid var(--primary-blue);
+  border-left: 2px solid var(--primary-blue);
+}
+
+.mobileCtaLink:hover {
+  background: var(--primary-blue-dark);
+  border-color: var(--primary-blue-dark);
+}
+
+.mobileCtaLink .mobileIcon {
+  color: var(--white);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+  
+  .navLinks {
+    gap: 1.5rem;
+  }
+  
+  .navLink {
+    font-size: 0.9rem;
+    padding: 0.5rem 0.75rem;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Hide desktop nav and show mobile toggle */
+  .desktopNav {
+    display: none;
+  }
+  
+  .mobileToggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .container {
+    padding: 0 1rem;
+  }
+  
+  .brandName {
+    font-size: 1.2rem;
+  }
+  
+  .tagline {
+    font-size: 0.6rem;
+  }
+  
+  .logoIcon {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .logoImage {
+    width: 45px;
+    height: 45px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 0.75rem 0;
+  }
+  
+  .navbar.scrolled {
+    padding: 0.5rem 0;
+  }
+  
+  .brandName {
+    font-size: 1rem;
+  }
+  
+  .tagline {
+    font-size: 0.55rem;
+    letter-spacing: 2px;
+  }
+  
+  .logoIcon {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .logoImage {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .mobileMenu {
+    width: 90%;
+  }
+  
+  .mobileToggle {
+    width: 44px;
+    height: 44px;
+    padding: 0.5rem;
+  }
+  
+  .toggleIcon svg {
+    width: 22px;
+    height: 22px;
+  }
+}
