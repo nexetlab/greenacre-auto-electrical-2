@@ -36,7 +36,7 @@ const CarBatteryPage = () => {
 
             <div className={styles.imageContent}>
               <img 
-                src="/images/battery-shelf.jpg" 
+                src="/images/car_battery_shelf.jpeg" 
                 alt="Our battery inventory" 
                 className={styles.serviceImage}
               />

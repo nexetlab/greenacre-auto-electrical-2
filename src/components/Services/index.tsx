@@ -31,7 +31,7 @@ const Services = () => {
       title: 'Alternators',
       description: 'Expert alternator repairs and replacements to keep your electrical system running smoothly.',
       icon: <IoMdSpeedometer />,
-      image: '/images/alternator-service.png'
+      image: '/images/alternator_motor_shelf.jpeg'
     },
     {
       id: 'starter-motors',
@@ -45,14 +45,14 @@ const Services = () => {
       title: 'Car Battery Service',
       description: 'Battery testing, replacement, and jump-start services available 24/7.',
       icon: <FaCarBattery />,
-      image: '/images/battery-service.png'
+      image: '/images/car_battery_shelf.jpeg'
     },
     {
       id: 'air-conditioning',
       title: 'Car Air Conditioning',
       description: 'Keep cool with our professional A/C servicing, regassing, and repairs.',
       icon: <FaFan />,
-      image: '/images/ac-service.png'
+      image: '/images/air_conditioning.jpeg'
     },
     {
       id: 'pink-slip-inspection',

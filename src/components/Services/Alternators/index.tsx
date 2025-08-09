@@ -38,13 +38,8 @@ const AlternatorsPage = () => {
 
             <div className={styles.imageContent}>
               <img 
-                src="/images/alternator-shelf.jpg" 
+                src="/images/alternator_motor_shelf.jpeg" 
                 alt="Our alternator inventory" 
-                className={styles.serviceImage}
-              />
-              <img 
-                src="/images/alternator-installation.jpg" 
-                alt="Alternator installation" 
                 className={styles.serviceImage}
               />
             </div>
